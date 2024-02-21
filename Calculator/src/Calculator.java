@@ -5,11 +5,11 @@ public class Calculator {
 
     public static void main(String[] args) {
 
-        Main answer = new Main();
+
         Scanner input = new Scanner(System.in);
         System.out.print("Введите выражение: ");
         String exp = input.nextLine();
-        answer.calc(exp);
+        Main.calc(exp);
 
     }
 }
