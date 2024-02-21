@@ -4,12 +4,20 @@ import java.util.Scanner;
 public class Calculator {
 
     public static void main(String[] args) {
+
+        Main answer = new Main();
+        Scanner input = new Scanner(System.in);
+        System.out.print("Введите выражение: ");
+        String exp = input.nextLine();
+        answer.calc(exp);
+
+    }
+}
+class Main{
+    public static String calc(String exp){
         Converter converter = new Converter();
         String[] actions = {"+", "-", "/", "*"};
         String[] regexActions = {"\\+", "-", "/", "\\*"};
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите выражение: ");
-        String exp = scanner.nextLine();
 
 // Проверка знака операции
         int actionIndex = -1;
@@ -74,6 +82,11 @@ public class Calculator {
         }else{
             throw new RuntimeException("числа должны быть в одном формате");
         }
+
+
+        return exp;
     }
+
+
 
 }
